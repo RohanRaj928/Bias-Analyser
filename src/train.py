@@ -28,9 +28,9 @@ def main():
 
     ## Training Variables Default ##
     num_epochs = 3
-    batch_size = 2
+    batch_size = 8
     learning_rate = 1e-5
-    num_workers = 1
+    num_workers = 3
 
     base_dir = pathlib.Path(__file__).resolve().parent.parent
     filepath = base_dir / 'Models' / 'Classification'
@@ -43,7 +43,6 @@ def main():
     else:
         device = torch.device('cpu')
 
-    device = torch.device('cpu')
 
     print("Using device:", device.type)
 
@@ -60,6 +59,7 @@ def main():
     # 0: Left, 1: Right , 2: Center
     text_train = df_train['content'].tolist()
     labels_train = df_train['bias_text'].tolist()
+    print(type(labels_train[0]))
 
     text_valid = df_valid['content'].tolist()
     labels_valid = df_valid['bias_text'].tolist()
