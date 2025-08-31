@@ -8,3 +8,4 @@ tqdm
 captum
 nltk
 numpy
+scikit-learn

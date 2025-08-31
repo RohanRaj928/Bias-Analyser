@@ -1,12 +1,34 @@
 # R-News 
-one of the main drawbacks of the first generation of Transformers and
-BERT based architectures; the sequence length is limited to a maximum
-of 512 characters. The reason behind that limitation is the fact that
-self-attention mechanism scales quadratically with the input sequence
-length O(n^2).
-Uses Efficient sparse attention, which makes it faster than traditional 
-transformers.
 
-Using AMP [Research]
+A Python tool that analyses news articles for potential political bias 
+indicators. The goal is to help readers critically evaluate news sources 
+by highlighting patterns in tone and word usage.
 
-Using Captum [Research]
+## Installation
+```
+git clone https://github.com/your-username/bias-analyser.git
+cd bias-analyser
+pip install -r requirements.txt
+```
+
+## Usage
+/ / /
+
+## Training
+python scripts used for training are also included
+
+## Methodology
+1. Preprocessing  
+Articles are collected from online sources.
+2. Representation  
+Articles are encoded using Longformer to capture context over long sequences.
+3. Bias Indicators  
+Articles are classified as Left, Center or Right.
+4. Output  
+The final classification is given. The sentences contributed most to the model's
+decision are highlighted.
+
+## Tech Stack
+* Longformer (Huggingface)
+* PyTorch for training/inference
+* Newspaper3k for article scraping

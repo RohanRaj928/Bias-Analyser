@@ -1,5 +1,3 @@
-import os
-
 from newspaper import Article
 from transformers import LongformerTokenizerFast, LongformerForSequenceClassification
 import pathlib
@@ -40,7 +38,15 @@ def predict(text):
 
 probabilities = predict(article.text)
 predicted_class = torch.argmax(probabilities, dim=-1).item()
-print("Predicted class:", predicted_class)
+
+if predicted_class == 0:
+    predicted_class_name = "Left"
+elif predicted_class == 1:
+    predicted_class_name = "Right"
+else:
+    predicted_class_name = "Center"
+
+print("Predicted class:", predicted_class_name)
 print("Probabilities:", probabilities)
 
 ### Model Explainability ###
