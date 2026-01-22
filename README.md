@@ -12,7 +12,9 @@ pip install -r requirements.txt
 ```
 
 ## Usage
-/ / /
+```
+python3 ./src/main.py
+```
 
 ## Training
 python scripts used for training are also included
